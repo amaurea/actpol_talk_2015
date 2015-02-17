@@ -10,9 +10,6 @@
 \setbox0=\hbox{\includegraphics[height=#2]{#1}}\parbox{\wd0}{\box0}\endgroup}
 \newcommand*{\rmimg}[2]{\begingroup
 \setbox0=\hbox{\includegraphics[angle=90,origin=c,height=#2]{#1}}\parbox{\wd0}{\box0}\endgroup}
-\newcommand*{\symok}[0]{\includegraphics[height=1em]{symbol_ok.pdf}}
-\newcommand*{\symbad}[0]{\includegraphics[height=1em]{symbol_bad.pdf}}
-\newcommand*{\symidk}[0]{{\bf\color{blue}\Large?}}
 
 \setbeamertemplate{navigation symbols}{}%remove navigation symbols
 \setbeamertemplate{footline}{\hspace*{.5cm}\scriptsize{\hfill\raisebox{1mm}{\insertframenumber}\hspace*{.5cm}}}
@@ -26,6 +23,9 @@
 
 \begin{document}
 
+
+% New overall thread
+%    * Will talk about recent ACT measurements.
 \begin{frame}
 	\titlepage
 	\vspace{-1cm}
@@ -33,179 +33,17 @@
 	{\footnotesize The source code for this talk can be found at {\color[rgb]{0,0.7,0}https://github.com/amaurea/actpol-talk-2015}}
 	\end{center}
 \end{frame}
-
-% ACT main science stuff
-%  Power spectra
-%  * High-l TT -> ns(?), Neff
-%  * High-l EE -> as TT but less foregrounds (CIB, agn)
-%  CMB lensing
-%  * Mid-high l TT, EE -> lensing
-%  * Mid-l  BB -> lensing B-modes. No cosmic variance from non-lensing
-%  Individual sources
-%  * SZ clusters -> tSZ, kSZ. kSZ better but only detectable in aggregate to us
-%  * Point source catalogue -> lots of high-redshift stuff (but how much of it is new?)
-%  (Stacked sources)
-
-% Overall thread
-%  * Will talk about recent act CMB measurements
-%  * CMB is blah blah, nice because blah blah, monopole, dipole, etc.
-%  * Physics in the CMB, T, E and B
-%  * What happens to the CMB on its way to us, good+bad
-%  * How you go about trying to measure it (scanning etc)
-%  * Short history of observations
-%    - map with early experiments and early results
-%      * Monopole: Penzias, Wilson 1964
-%      * Dipole:   Henry 1971
-%      * Blackbody: COBE FIRAS 1992
-%      * Quadrupole to l\sim 15: COBE DMR 1992
-%      * WMAP + others
-%    - map with some current experiments
-%      * Planck, BICEP+CLASS+SPIDER (prim B), ACT+SPT (high-l)
-%  * ACT and ACTPol, 5000 m in Atacama, Chile, observed from, pol from, high resolution (for CMB)
-
-
-
-
-
-% 45 min talk, should have time to go through how we make maps
-% Reuse foreground lensing too?
-%
-% === Map stuff ===
-% Full-sky planck cmb
-% zoom on patch
-% compare with actpol, looks similar due to large-mode dominance
-% gradually subtract large-scale modes to reveal all the small-scale modes
-% highlight non-cmb features: point sources, clusters
-% illustrate white noise vs correlated noise
-% actpol TOD power spectrum -> actpol noise angular power spectrum
-% map distortions - flat sky, boosting, lensing
-%
-% === Telescopes ===
-% Planck: Full-sky, multi-frequency, shallow, low-res (l<2500)
-% Bicep:  Small patch, very deep, low-res
-% Polarbear: Small patch, deep, ?-res
-% ACT,SPT: Small-medium patches, deep, high-res (l<10000)
-
-% === Physics ===
-% What can you do with high resolution?
-%  ns, Neff
-%  lensing -> neutrino mass, modified gravity tests?, measure galaxy bias by cross-correlation
-%   explain why high res is good for lensing
-%   in the low noise limit you need more modes to beat down cosmic variance
-%  sz clusters -> Tsz, Ksz. Ksz probes velocity field
-%  point sources - are these useful?
-
-% === ACTPol status and plans ===
-% Analysing S2 of actpol data, preparing for S3 observing with new frequencies
-% Advanced actpol
-
-\begin{frame}
-	\centering
-	\begin{tabular}{c}
-		\only<1>{Planck}%
-		\only<2>{Planck+actpol}%
-		\only<3>{Planck+actpol $\ell>2000$}%
-		\only<4>{Planck $\ell>2000$}%
-		\\
-		\only<1>{\includegraphics[width=0.7\textwidth]{maps/crop/planck.png}}%
-		\only<2>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
-		\only<3>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd_2000_gray_0.png}}%
-		\only<4>{\includegraphics[width=0.7\textwidth]{maps/crop/planck_2000_gray.png}}%
-		\\
-		\only<1>{$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$}%
-		\only<2>{$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$}%
-		\only<3>{$\pm 200 \mu$K, $4.26^\circ \times 4.26^\circ$}%
-		\only<4>{$\pm 200 \mu$K, $4.26^\circ \times 4.26^\circ$}%
-	\end{tabular}
+%    * Short CMB intro. Big bang, surface of last scattering, picture of early universe
+%      everyithing simple and linear, radiation much more relevant: gravitational waves
+\begin{frame}{What's so great about the CMB anyway?}
 \end{frame}
-
-\begin{frame}
-	\centering
-	\begin{tabular}{c}
-		\only<1>{Total signal}%
-		\only<2>{CMB (Wiener)}%
-		\only<3>{Remainder}%
-		\only<4>{Total signal}%
-		\\
-		\only<1>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
-		\only<2>{\includegraphics[width=0.7\textwidth]{maps/crop/cmb.png}}%
-		\only<3>{\includegraphics[width=0.7\textwidth]{maps/crop/nocmb.png}}%
-		\only<4>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
-		\\
-		$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$
-	\end{tabular}
+%    * More detailed about what it looks like? T, E and B generation mechanisms,
+%      thompson scattering, movement perp to density countours -> E.
+\begin{frame}{CMB polarization}
 \end{frame}
-
-\begin{frame}{Instrument noise properties}
-	\centering
-	\includegraphics[width=0.7\textwidth]{maps/noise_sim.png}
-\end{frame}
-\begin{frame}{CMB sim for comparison}
-	\centering
-	\includegraphics[width=0.7\textwidth]{maps/cmb_sim.png}
-\end{frame}
-
-\begin{frame}
-	\centering
-	\includegraphics[width=\textwidth]{pwv_chajnantor_eso.jpeg}
-\end{frame}
-
-\begin{frame}{Lensing distorts the CMB}
-	\begin{center}
-		\begin{tikzpicture}
-			\only<1>{\node at (0,0) {\includegraphics[height=7cm]{lensing/T.png}};}%
-			\only<2>{\node at (0,0) {\includegraphics[height=7cm]{lensing/T.png}};}%
-			\only<3>{\node at (0,0) {\includegraphics[height=7cm]{lensing/TlT.png}};}%
-			\only<4-5>{\node at (0,0) {\includegraphics[height=7cm]{lensing/TsT.png}};}%
-			\only<2-4>{\node at (0,0) {\includegraphics[height=7cm]{lensing/phi_contours.png}};}%
-		\end{tikzpicture}
-
-		\only<1>{Unlensed\uncover<0>{p}}%
-		\only<2>{Gravitational potential}%
-		\only<3>{Lensed\uncover<0>{p}}%
-		\only<4>{Lensed x10\uncover<0>{p}}%
-		\only<5>{Non-Gaussian\uncover<0>{p}}%
-	\end{center}
-\end{frame}
-
-\begin{frame}{Lensing distorts the CMB Polarization}
-	\begin{center}
-		\hspace*{-3mm}
-		\begin{tabular}{cc}
-			{\bf Q} ($\pm 20\mu$K) & {\bf U} ($\pm 20\mu$K) \\
-			\only<1>{\includegraphics[height=5.5cm]{lensing/EBQ.png}}%
-			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlQ.png}}%
-			&
-			\only<1>{\includegraphics[height=5.5cm]{lensing/EBU.png}}%
-			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlU.png}}%
-		\end{tabular}
-
-		\only<1>{Unlensed}%
-		\only<2>{Lensed}%
-	\end{center}
-\end{frame}
-
-\begin{frame}{Lensing distorts E and B}
-	\begin{center}
-		\hspace*{-3mm}
-		\begin{tabular}{cc}
-			{\bf E} ($\pm 20\mu$K) & {\bf B} ($\pm 0.5\mu$K) \\
-			\only<1>{\includegraphics[height=5.5cm]{lensing/E.png}}%
-			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlE.png}}%
-			&
-			\only<1>{\includegraphics[height=5.5cm]{lensing/B.png}}%
-			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlB.png}}%
-		\end{tabular}
-
-		\only<1>{Unlensed}%
-		\only<2>{Lensed}%
-	\end{center}
-\end{frame}
-
-\begin{frame}{Kinematic SZ}
-	\includegraphics[height=8cm]{sz_act_boss_sudeep.jpeg}
-\end{frame}
-
+% 12 * But light has to travel for 13.8 billion years to tell us about all that.
+%      Preilous journey. What happens to T,E and B on the way.
+%    * And as it enters the telescope
 \begin{frame}{From pristine CMB to dirty data}
 	\begin{center}
 		\large%
@@ -273,7 +111,7 @@
 	{\footnotesize $-1\mu$K\enskip\includegraphics[width=12mm,height=2mm]{colorbar.png}\enskip$1\mu$K}
 \end{tabular}\hspace*{-5mm}
 \end{frame}
-
+%    * What telescope measures etc.
 \begin{frame}{What the telescope actually observes}
 	\begin{tikzpicture}[bad/.style={line width=3pt,red}]
 		\node at (0,0) {\begin{tabular}{ccc}
@@ -409,7 +247,7 @@
 		\uncover<12->{\large Time-ordered data (TOD)}
 	\end{center}
 \end{frame}
-
+%    * TOD
 \begin{frame}{Example TOD}
 	\begin{center}
 		\vspace{-1.5cm}
@@ -440,8 +278,8 @@
 		\end{block}}
 	\end{center}
 \end{frame}
-
-\begin{frame}{Recovering the sky - ideal case}
+%    * Image reconstruction
+\begin{frame}{Recovering the sky}
 	Can model TOD as linear combination of CMB and noise:
 	\[ d = {\color{green}P}{\color{blue}s} + {\color{red}n} \]
 	with TOD $d$,
@@ -451,7 +289,7 @@
 	\[ {\color{blue}s} = ({\color{green}P}^T{\color{red}N}^{-1}{\color{green}P})^{-1}{\color{green}P}^T{\color{red}N}^{-1}d \]
 	is an optimal estimator.
 \end{frame}
-
+%    * Beat down noise (white)
 \begin{frame}{Throw samples at it to beat down noise}
 	\begin{center}
 	\hspace*{-1.4cm}\begin{tabular}{ccc}
@@ -531,7 +369,7 @@
 	\end{tabular}\hspace*{-1.4cm}
 \end{center}
 \end{frame}
-
+%    * Beat down noise (full)
 \begin{frame}{What real noise looks like}
 	\begin{center}
 	\only<1>{\hspace*{-1cm}\includegraphics[height=8cm]{maps/scanreal/map00_small_0_crop.png}}%
@@ -547,5 +385,209 @@
 	\only<11>{\hspace*{-1cm}\includegraphics[height=8cm]{maps/scanreal/map10_small_0_crop.png}}%
 	\end{center}
 \end{frame}
+% 20 * List of instruments trying to do this
+%    * ACT
+\begin{frame}{ACT site PWV}
+	\centering
+	\includegraphics[width=\textwidth]{pwv_chajnantor_eso.jpeg}
+\end{frame}
+% 22 * Example CMB image from 2014 ACTPol article - before and after bandpass
+%    * Planck comparison?
+%    * Resulting image is not pristine CMB due to noise and systematic effects.
+%      Lensing, SZ, point sources, CIB, unresolved AGNs, diffuse galactic emission
+%    * But that's fine!
+%      Systematic effects as S/N increases: ignorable -> nuisance -> problem -> signal
+%    * Split image into CMB + rest, highlight ACT goals
+\begin{frame}
+	\centering
+	\begin{tabular}{c}
+		\only<1>{Total signal}%
+		\only<2>{CMB (Wiener)}%
+		\only<3>{Remainder}%
+		\only<4>{Total signal}%
+		\\
+		\only<1>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
+		\only<2>{\includegraphics[width=0.7\textwidth]{maps/crop/cmb.png}}%
+		\only<3>{\includegraphics[width=0.7\textwidth]{maps/crop/nocmb.png}}%
+		\only<4>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
+		\\
+		$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$
+	\end{tabular}
+\end{frame}
+% 25 * ACT goals: CMB lensing (w B-modes), High-l CMB, SZ, (low-l B-modes), (ptsrcs)
+%    * Lensing
+%      - Illustration of effect
+\begin{frame}{Lensing distorts the CMB}
+	\begin{center}
+		\begin{tikzpicture}
+			\only<1>{\node at (0,0) {\includegraphics[height=7cm]{lensing/T.png}};}%
+			\only<2>{\node at (0,0) {\includegraphics[height=7cm]{lensing/T.png}};}%
+			\only<3>{\node at (0,0) {\includegraphics[height=7cm]{lensing/TlT.png}};}%
+			\only<4-5>{\node at (0,0) {\includegraphics[height=7cm]{lensing/TsT.png}};}%
+			\only<2-4>{\node at (0,0) {\includegraphics[height=7cm]{lensing/phi_contours.png}};}%
+		\end{tikzpicture}
+
+		\only<1>{Unlensed\uncover<0>{p}}%
+		\only<2>{Gravitational potential}%
+		\only<3>{Lensed\uncover<0>{p}}%
+		\only<4>{Lensed x10\uncover<0>{p}}%
+		\only<5>{Non-Gaussian\uncover<0>{p}}%
+	\end{center}
+\end{frame}
+
+\begin{frame}{Lensing distorts the CMB Polarization}
+	\begin{center}
+		\hspace*{-3mm}
+		\begin{tabular}{cc}
+			{\bf Q} ($\pm 20\mu$K) & {\bf U} ($\pm 20\mu$K) \\
+			\only<1>{\includegraphics[height=5.5cm]{lensing/EBQ.png}}%
+			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlQ.png}}%
+			&
+			\only<1>{\includegraphics[height=5.5cm]{lensing/EBU.png}}%
+			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlU.png}}%
+		\end{tabular}
+
+		\only<1>{Unlensed}%
+		\only<2>{Lensed}%
+	\end{center}
+\end{frame}
+
+\begin{frame}{Lensing distorts E and B}
+	\begin{center}
+		\hspace*{-3mm}
+		\begin{tabular}{cc}
+			{\bf E} ($\pm 20\mu$K) & {\bf B} ($\pm 0.5\mu$K) \\
+			\only<1>{\includegraphics[height=5.5cm]{lensing/E.png}}%
+			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlE.png}}%
+			&
+			\only<1>{\includegraphics[height=5.5cm]{lensing/B.png}}%
+			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlB.png}}%
+		\end{tabular}
+
+		\only<1>{Unlensed}%
+		\only<2>{Lensed}%
+	\end{center}
+\end{frame}
+%      - What it helps with (geometric degeneracy, neutrino mass, bias)
+%      - ACT results
+%      - Planck dominates
+% 30 * High-l CMB
+%      - What it helps with
+%      - ACT results
+%      - With others
+% 35 * SZ
+%      - tSZ, kSZ
+\begin{frame}{Kinematic SZ}
+	\includegraphics[height=8cm]{sz_act_boss_sudeep.jpeg}
+\end{frame}
+%      - first detection of kSZ?
+% 40 * Summary of ACT firsts
+%    * Future: Full ACTPol and Advanced act
+% 45 * End
+
+% Pretty long!
+
+
+
+
+
+% ACT main science stuff
+%  Power spectra
+%  * High-l TT -> ns(?), Neff
+%  * High-l EE -> as TT but less foregrounds (CIB, agn)
+%  CMB lensing
+%  * Mid-high l TT, EE -> lensing
+%  * Mid-l  BB -> lensing B-modes. No cosmic variance from non-lensing
+%  Individual sources
+%  * SZ clusters -> tSZ, kSZ. kSZ better but only detectable in aggregate to us
+%  * Point source catalogue -> lots of high-redshift stuff (but how much of it is new?)
+%  (Stacked sources)
+
+% Overall thread
+%  * Will talk about recent act CMB measurements
+%  * CMB is blah blah, nice because blah blah, monopole, dipole, etc.
+%  * Physics in the CMB, T, E and B
+%  * What happens to the CMB on its way to us, good+bad
+%  * How you go about trying to measure it (scanning etc)
+%  * Short history of observations
+%    - map with early experiments and early results
+%      * Monopole: Penzias, Wilson 1964
+%      * Dipole:   Henry 1971
+%      * Blackbody: COBE FIRAS 1992
+%      * Quadrupole to l\sim 15: COBE DMR 1992
+%      * WMAP + others
+%    - map with some current experiments
+%      * Planck, BICEP+CLASS+SPIDER (prim B), ACT+SPT (high-l)
+%  * ACT and ACTPol, 5000 m in Atacama, Chile, observed from, pol from, high resolution (for CMB)
+
+
+
+
+
+% 45 min talk, should have time to go through how we make maps
+% Reuse foreground lensing too?
+%
+% === Map stuff ===
+% Full-sky planck cmb
+% zoom on patch
+% compare with actpol, looks similar due to large-mode dominance
+% gradually subtract large-scale modes to reveal all the small-scale modes
+% highlight non-cmb features: point sources, clusters
+% illustrate white noise vs correlated noise
+% actpol TOD power spectrum -> actpol noise angular power spectrum
+% map distortions - flat sky, boosting, lensing
+%
+% === Telescopes ===
+% Planck: Full-sky, multi-frequency, shallow, low-res (l<2500)
+% Bicep:  Small patch, very deep, low-res
+% Polarbear: Small patch, deep, ?-res
+% ACT,SPT: Small-medium patches, deep, high-res (l<10000)
+
+% === Physics ===
+% What can you do with high resolution?
+%  ns, Neff
+%  lensing -> neutrino mass, modified gravity tests?, measure galaxy bias by cross-correlation
+%   explain why high res is good for lensing
+%   in the low noise limit you need more modes to beat down cosmic variance
+%  sz clusters -> Tsz, Ksz. Ksz probes velocity field
+%  point sources - are these useful?
+
+% === ACTPol status and plans ===
+% Analysing S2 of actpol data, preparing for S3 observing with new frequencies
+% Advanced actpol
+
+\begin{frame}
+	\centering
+	\begin{tabular}{c}
+		\only<1>{Planck}%
+		\only<2>{Planck+actpol}%
+		\only<3>{Planck+actpol $\ell>2000$}%
+		\only<4>{Planck $\ell>2000$}%
+		\\
+		\only<1>{\includegraphics[width=0.7\textwidth]{maps/crop/planck.png}}%
+		\only<2>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
+		\only<3>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd_2000_gray_0.png}}%
+		\only<4>{\includegraphics[width=0.7\textwidth]{maps/crop/planck_2000_gray.png}}%
+		\\
+		\only<1>{$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$}%
+		\only<2>{$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$}%
+		\only<3>{$\pm 200 \mu$K, $4.26^\circ \times 4.26^\circ$}%
+		\only<4>{$\pm 200 \mu$K, $4.26^\circ \times 4.26^\circ$}%
+	\end{tabular}
+\end{frame}
+
+
+\begin{frame}{Instrument noise properties}
+	\centering
+	\includegraphics[width=0.7\textwidth]{maps/noise_sim.png}
+\end{frame}
+\begin{frame}{CMB sim for comparison}
+	\centering
+	\includegraphics[width=0.7\textwidth]{maps/cmb_sim.png}
+\end{frame}
+
+
+
+
 
 \end{document}
