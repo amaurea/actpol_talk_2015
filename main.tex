@@ -11,6 +11,8 @@
 \newcommand*{\rmimg}[2]{\begingroup
 \setbox0=\hbox{\includegraphics[angle=90,origin=c,height=#2]{#1}}\parbox{\wd0}{\box0}\endgroup}
 
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
 \setbeamertemplate{navigation symbols}{}%remove navigation symbols
 \setbeamertemplate{footline}{\hspace*{.5cm}\scriptsize{\hfill\raisebox{1mm}{\insertframenumber}\hspace*{.5cm}}}
 
@@ -33,8 +35,8 @@
 %	{\footnotesize The source code for this talk can be found at {\color[rgb]{0,0.7,0}https://github.com/amaurea/actpol-talk-2015}}
 %	\end{center}
 %\end{frame}
-%%    * Short CMB intro. Big bang, surface of last scattering, picture of early universe
-%%      everyithing simple and linear, radiation much more relevant: gravitational waves
+%    * Short CMB intro. Big bang, surface of last scattering, picture of early universe
+%      everyithing simple and linear, radiation much more relevant: gravitational waves
 %\begin{frame}{What's so great about the CMB anyway?}
 %\end{frame}
 %%    * More detailed about what it looks like? T, E and B generation mechanisms,
@@ -362,7 +364,7 @@
 %		\includegraphics[height=4cm]{maps/scansims/scansims_016_0.png} &
 %		\includegraphics[height=4cm]{maps/scansims/scansims_016_1.png} &
 %		\includegraphics[height=4cm]{maps/scansims/scansims_016_2.png}}%
-%		\only<18>{%
+%		\only<18-19>{%
 %		\includegraphics[height=4cm]{maps/scansims/scansims_017_0.png} &
 %		\includegraphics[height=4cm]{maps/scansims/scansims_017_1.png} &
 %		\includegraphics[height=4cm]{maps/scansims/scansims_017_2.png}}%
@@ -382,92 +384,261 @@
 %	\only<8>{\hspace*{-1cm}\includegraphics[height=8cm]{maps/scanreal/map07_small_0_crop.png}}%
 %	\only<9>{\hspace*{-1cm}\includegraphics[height=8cm]{maps/scanreal/map08_small_0_crop.png}}%
 %	\only<10>{\hspace*{-1cm}\includegraphics[height=8cm]{maps/scanreal/map09_small_0_crop.png}}%
-%	\only<11>{\hspace*{-1cm}\includegraphics[height=8cm]{maps/scanreal/map10_small_0_crop.png}}%
+%	\only<11-12>{\hspace*{-1cm}\includegraphics[height=8cm]{maps/scanreal/map10_small_0_crop.png}}%
 %	\end{center}
 %\end{frame}
-%% 20 * List of instruments trying to do this
-%%    * ACT
-%\begin{frame}{ACT site PWV}
-%	\centering
-%	\includegraphics[width=\textwidth]{pwv_chajnantor_eso.jpeg}
-%\end{frame}
-%% 22 * Example CMB image from 2014 ACTPol article - before and after bandpass
-%%    * Planck comparison?
-%%    * Resulting image is not pristine CMB due to noise and systematic effects.
-%%      Lensing, SZ, point sources, CIB, unresolved AGNs, diffuse galactic emission
-%%    * But that's fine!
-%%      Systematic effects as S/N increases: ignorable -> nuisance -> problem -> signal
-%%    * Split image into CMB + rest, highlight ACT goals
-%\begin{frame}
-%	\centering
-%	\begin{tabular}{c}
-%		\only<1>{Total signal}%
-%		\only<2>{CMB (Wiener)}%
-%		\only<3>{Remainder}%
-%		\only<4>{Total signal}%
-%		\\
-%		\only<1>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
-%		\only<2>{\includegraphics[width=0.7\textwidth]{maps/crop/cmb.png}}%
-%		\only<3>{\includegraphics[width=0.7\textwidth]{maps/crop/nocmb.png}}%
-%		\only<4>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
-%		\\
-%		$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$
-%	\end{tabular}
-%\end{frame}
-%% 25 * ACT goals: CMB lensing (w B-modes), High-l CMB, SZ, (low-l B-modes), (ptsrcs)
-%%    * Lensing
-%%      - Illustration of effect
-%\begin{frame}{Lensing distorts the CMB}
-%	\begin{center}
-%		\begin{tikzpicture}
-%			\only<1>{\node at (0,0) {\includegraphics[height=7cm]{lensing/T.png}};}%
-%			\only<2>{\node at (0,0) {\includegraphics[height=7cm]{lensing/T.png}};}%
-%			\only<3>{\node at (0,0) {\includegraphics[height=7cm]{lensing/TlT.png}};}%
-%			\only<4-5>{\node at (0,0) {\includegraphics[height=7cm]{lensing/TsT.png}};}%
-%			\only<2-4>{\node at (0,0) {\includegraphics[height=7cm]{lensing/phi_contours.png}};}%
-%		\end{tikzpicture}
-%
-%		\only<1>{Unlensed\uncover<0>{p}}%
-%		\only<2>{Gravitational potential}%
-%		\only<3>{Lensed\uncover<0>{p}}%
-%		\only<4>{Lensed x10\uncover<0>{p}}%
-%		\only<5>{Non-Gaussian\uncover<0>{p}}%
-%	\end{center}
-%\end{frame}
-%
-%\begin{frame}{Lensing distorts the CMB Polarization}
-%	\begin{center}
-%		\hspace*{-3mm}
-%		\begin{tabular}{cc}
-%			{\bf Q} ($\pm 20\mu$K) & {\bf U} ($\pm 20\mu$K) \\
-%			\only<1>{\includegraphics[height=5.5cm]{lensing/EBQ.png}}%
-%			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlQ.png}}%
-%			&
-%			\only<1>{\includegraphics[height=5.5cm]{lensing/EBU.png}}%
-%			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlU.png}}%
-%		\end{tabular}
-%
-%		\only<1>{Unlensed}%
-%		\only<2>{Lensed}%
-%	\end{center}
-%\end{frame}
-%
-%\begin{frame}{Lensing distorts E and B}
-%	\begin{center}
-%		\hspace*{-3mm}
-%		\begin{tabular}{cc}
-%			{\bf E} ($\pm 20\mu$K) & {\bf B} ($\pm 0.5\mu$K) \\
-%			\only<1>{\includegraphics[height=5.5cm]{lensing/E.png}}%
-%			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlE.png}}%
-%			&
-%			\only<1>{\includegraphics[height=5.5cm]{lensing/B.png}}%
-%			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlB.png}}%
-%		\end{tabular}
-%
-%		\only<1>{Unlensed}%
-%		\only<2>{Lensed}%
-%	\end{center}
-%\end{frame}
+% 20 * List of instruments trying to do this
+%    * ACT
+\begin{frame}{ACT site PWV}
+	\centering
+	\includegraphics[width=\textwidth]{pwv_chajnantor_eso.jpeg}
+\end{frame}
+% 22 * Example CMB image from 2014 ACTPol article - before and after bandpass
+%    * Planck comparison?
+%    * Resulting image is not pristine CMB due to noise and systematic effects.
+%      Lensing, SZ, point sources, CIB, unresolved AGNs, diffuse galactic emission
+%    * But that's fine!
+%      Systematic effects as S/N increases: ignorable -> nuisance -> problem -> signal
+%    * Split image into CMB + rest, highlight ACT goals
+\begin{frame}
+	\centering
+	\begin{tabular}{c}
+		\only<1>{Total signal}%
+		\only<2>{CMB (Wiener)}%
+		\only<3>{Remainder}%
+		\only<4>{Total signal}%
+		\\
+		\only<1>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
+		\only<2>{\includegraphics[width=0.7\textwidth]{maps/crop/cmb.png}}%
+		\only<3>{\includegraphics[width=0.7\textwidth]{maps/crop/nocmb.png}}%
+		\only<4>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
+		\\
+		$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$
+	\end{tabular}
+\end{frame}
+% 25 * ACT goals: CMB lensing (w B-modes), High-l CMB, SZ, (low-l B-modes), (ptsrcs)
+%    * Lensing
+%      - Illustration of effect
+\begin{frame}{CMB lensing}
+	\begin{center}
+		\begin{tikzpicture}
+			\node at (0,0) {\includegraphics[width=\textwidth]{Planck_gravitational_lensing_CMB_transparent.png}};
+			\uncover<2->{\draw[thick,white,dashed] (-5,2.6) -- (2.4,-0.4);}
+			\uncover<3->{\draw[thick,white,->] (2.4,-0.4) -- (2.8,-0.15);}
+			\uncover<4->{\node[white] at (3.5,-0.5) {$\sim3$ arcmin};}
+		\end{tikzpicture}
+
+		{\footnotesize Credit: Planck, ESA}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Pure CMB is degenerate}
+	\begin{center}
+		\vspace{-10mm}
+		\begin{tikzpicture}
+			\node at ( 4.15,0.12) {\includegraphics[height=4.2cm]{cmb_slice.png}};
+			\node at ( 0.00,0.00) {\includegraphics[width=10cm]{z_cmb.pdf}};
+			\node[orange] at (4.15,2.40) {CMB};
+			\node at (-5.20,0.20) {\includegraphics[height=1.0cm]{earth.png}};
+			\uncover<14->{%
+			\node at ( 0.00,0.00) {\includegraphics[width=10cm]{z_sn.pdf}};
+			\node[blue] at (-2.40,2.40) {SN};}
+			\uncover<15->{%
+			\node at ( 0.00,0.00) {\includegraphics[width=10cm]{z_bao.pdf}};
+			\node[green] at (-0.32,2.40) {BAO};}
+			\uncover<18->{%
+			\node at ( 0.00,0.00) {\includegraphics[width=10cm]{z_lens.pdf}};
+			\node[magenta,align=center] at (-0.24,0.00) {CMB\\Lensing};}
+
+			\uncover<2-11>{%
+			\draw[thick,red] (4.15,0.26) ellipse (0.4 and 2.5);}
+			\uncover<3-11>{%
+			\draw[ultra thick,red,<->] (-4.2,2.4) -- (3.6,2.4);
+			\node[red] at (0.0,2.7) {$d_A$};}
+			\uncover<4-11>{%
+			\node[blue,scale=2] at (0,0.2) {\Huge ?};}
+
+			\node at (0,-4) {$\begin{aligned}
+				\uncover<5->{\mimg{maps/degen1.png}{2cm}}
+				\uncover<6->{\xrightarrow{-\Omega_\Lambda}}
+				\uncover<7->{\mimg{maps/degen2.png}{2cm}}
+				\uncover<8->{\xrightarrow{+t_0}}
+				\uncover<9->{\mimg{maps/degen3.png}{2cm}}
+				\uncover<10->{\xrightarrow{+\Omega_k}}
+				\uncover<11->{\mimg{maps/degen1.png}{2cm}}
+				\end{aligned}$};
+
+			\uncover<12>{\node[fill=white,align=center] at (0,-1.5) {
+				\includegraphics[height=7.5cm]{cmb_nolens_degen.png}\\
+				{\footnotesize Modified from Sherwin et al. 2011 \uncover<0>{g}}};}
+			\uncover<16>{\node[fill=white,align=center] at (0,-1.5) {
+				\includegraphics[height=7.5cm]{cmb_nolens_sn_bao.png}\\
+				{\footnotesize Modified from Supernova Cosmology Project 2010}};}
+
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\begin{frame}{CMB lensing vs. other probes}
+	CMB lensing is not the only probe of large scale structure
+	\vspace{2mm}
+
+	\begin{tikzpicture}[
+			ball/.style={circle,align=center,inner sep=0,text width=1.4cm},
+			ubrace/.style={decoration={brace,mirror,raise=2mm,amplitude=4mm},decorate}
+		]
+		\node[ball,fill=blue!20]    (A) at (0.0,0.0) {\small Galaxies};
+		\node[ball,fill=blue!20]    (B) at (1.5,0.0) {\small Quasars};
+		\node[ball,fill=blue!20]    (C) at (3.0,0.0) {\small Clusters};
+		\node[ball,fill=green!20]   (D) at (4.5,0.0) {CIB};
+		\node[ball,fill=green!20]   (E) at (6.0,0.0) {21 cm};
+		\node[ball,fill=magenta!20] (F) at (7.5,0.0) {\small Gal.lens};
+		\node[ball,fill=magenta!20] (G) at (9.0,0.0) {\small cmb lens};
+		\draw[thick,ubrace] (A.south west) -- (C.south east) node[pos=0.5,anchor=north,yshift=-5mm] {Number counts};
+		\draw[thick,ubrace] (D.south west) -- (E.south east) node[pos=0.5,anchor=north,yshift=-5mm] {Intensity mapping};
+		\draw[thick,ubrace] (F.south west) -- (G.south east) node[pos=0.5,anchor=north,yshift=-5mm] {Lensing};
+	\end{tikzpicture}
+	\uncover<2->{Compared to these, CMB lensing is
+	\begin{itemize}
+		\item<3-> \color{green!50!black}Very clean (simple source, no astrophysics, linear regime)
+		\item<4-> \color{green!50!black}Directly measures total (i.e. mostly dark) matter distribution
+		\item<5-> \color{green!50!black}High redshift ($0.1\lesssim z\lesssim 10$)
+		\item<6-> \color{red}Faint
+		\item<7-> \color{red}Low resolution
+		\item<8-> \color{red}No tomography
+	\end{itemize}}
+\end{frame}
+
+
+\begin{frame}{How lensing distorts the CMB}
+	\begin{center}
+		\begin{tikzpicture}
+			\only<1>{\node at (0,0) {\includegraphics[height=7cm]{lensing/T.png}};}%
+			\only<2>{\node at (0,0) {\includegraphics[height=7cm]{lensing/T.png}};}%
+			\only<3>{\node at (0,0) {\includegraphics[height=7cm]{lensing/TlT.png}};}%
+			\only<4-5>{\node at (0,0) {\includegraphics[height=7cm]{lensing/TsT.png}};}%
+			\only<2-4>{\node at (0,0) {\includegraphics[height=7cm]{lensing/phi_contours.png}};}%
+		\end{tikzpicture}
+
+		\only<1>{Unlensed\uncover<0>{p}}%
+		\only<2>{Gravitational potential}%
+		\only<3>{Lensed\uncover<0>{p}}%
+		\only<4>{Lensed x10\uncover<0>{p}}%
+		\only<5>{Non-Gaussian\uncover<0>{p}}%
+	\end{center}
+\end{frame}
+
+\begin{frame}{How lensing distorts the CMB Polarization}
+	\begin{center}
+		\hspace*{-3mm}
+		\begin{tabular}{cc}
+			{\bf Q} ($\pm 20\mu$K) & {\bf U} ($\pm 20\mu$K) \\
+			\only<1>{\includegraphics[height=5.5cm]{lensing/EBQ.png}}%
+			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlQ.png}}%
+			&
+			\only<1>{\includegraphics[height=5.5cm]{lensing/EBU.png}}%
+			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlU.png}}%
+		\end{tabular}
+
+		\only<1>{Unlensed}%
+		\only<2>{Lensed}%
+	\end{center}
+\end{frame}
+
+\begin{frame}{How lensing distorts E and B}
+	\begin{center}
+		\hspace*{-3mm}
+		\begin{tabular}{cc}
+			{\bf E} ($\pm 20\mu$K) & {\bf B} ($\pm 0.5\mu$K) \\
+			\only<1>{\includegraphics[height=5.5cm]{lensing/E.png}}%
+			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlE.png}}%
+			&
+			\only<1>{\includegraphics[height=5.5cm]{lensing/B.png}}%
+			\only<2>{\includegraphics[height=5.5cm]{lensing/EBlB.png}}%
+		\end{tabular}
+
+		\only<1>{Unlensed}%
+		\only<2>{Lensed}%
+	\end{center}
+\end{frame}
+
+\begin{frame}{Measuring CMB lensing}
+	\begin{tikzpicture}
+		\node at (-0.1, 3.8) {Which is lensed?};
+		\node[text width=6cm] at (0,0) {
+			\begin{tabular}{m{0.5cm}m{2.25cm}m{2.25cm}}
+				T &
+				\includegraphics[height=2.25cm]{maps/small_lensed_0.png} &
+				\includegraphics[height=2.25cm]{maps/small_unlensed_0.png} \\
+				\uncover<2->{E &
+				\includegraphics[height=2.25cm]{maps/small_lensed_1.png} &
+				\includegraphics[height=2.25cm]{maps/small_unlensed_1.png}} \\
+				\uncover<7->{B &
+				\includegraphics[height=2.25cm]{maps/small_lensed_2.png} &
+				\includegraphics[height=2.25cm]{maps/small_unlensed_2.png}}
+			\end{tabular}
+		};
+		\node[text width=6.8cm,anchor=north] at (5.5,4) {
+			\begin{itemize}
+				\item<3-> Must detect statistically
+					\begin{center}
+						\uncover<4->{%
+						Without lensing \\
+						$\ell_1$ \includegraphics[width=2.0cm]{lens_line_high.png}
+						$\independent$
+						\includegraphics[width=2.0cm]{lens_line_low.png} $\ell_2$}\\
+						\uncover<5->{%
+						Lensing distorts \\
+						\includegraphics[width=4.0cm]{lens_line_orig.png} \\
+						into \\
+						\includegraphics[width=4.0cm]{lens_line_lensed.png} \\
+						$\textrm{cov}(a_{\ell_1 m_1},a_{\ell_2,m_2}) \ne 0$}
+					\end{center}
+				\item<6-> Measure off-diagonal CMB covariance
+				\item<8-> B-mode lensing has (almost) no cosmic variance
+			\end{itemize}
+		};
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Measurements}
+	\centering
+	\begin{itemize}
+		\item<1-> ACT 2011: First detection of lensing power spectrum
+		\item<2-> Planck 2015: $40\sigma$!
+	\end{itemize}
+	\begin{tikzpicture}
+		\uncover<1>{\node at (0,0) {\includegraphics[height=6cm]{act_lens_spec11.pdf}};}
+		\uncover<2>{\node at (0,0) {\includegraphics[height=6cm]{planck_spt_act_lensing.pdf}};}
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Stacked halo lensing}
+	\centering
+	\begin{tikzpicture}
+		\only<1-3>{\node at (0,0) {
+			\only<1>{\includegraphics[height=6.5cm]{actpol_halo_sim_nolens.png}}%
+			\only<2>{\includegraphics[height=6.5cm]{actpol_halo_sim_lens.png}}%
+			\only<3->{\includegraphics[height=6.5cm]{actpol_halo_sim_diff.png}}%
+		};}
+		\only<1-3>{\node at (0,3.8) {
+			\only<1>{Unlensed}%
+			\only<2>{Lensed}%
+			\only<3->{Diff}%
+		};}
+	\end{tikzpicture} \\
+	\footnotesize{Credit: Madhavacheril}
+\end{frame}
+\begin{frame}{ACTPol 2014: First detection @$3.2\sigma$}
+	\centering
+	\hspace*{-1.2cm}\begin{tikzpicture}
+		\node at (0,0) {\includegraphics[height=5cm]{actpol_halo_stack.pdf}};
+		\node at (6,0) {\includegraphics[height=5cm]{actpol_cluster_lens_spec_madhavacheril.png}};
+	\end{tikzpicture}
+	Madhavacheril et al. 2014, arXiv:1411.7999 \\
+	Probes dark matter halo density profile
+\end{frame}
+
 %      - What it helps with ((geometric degeneracy), neutrino mass, bias, dark energy(how?))
 %      - ACT results
 %      - Planck dominates
