@@ -494,9 +494,9 @@
 	\begin{tikzpicture}
 		\node at (0,0) {\includegraphics[height=6cm]{sz_illustration_van_speybroeck.png}};
 		\uncover<2>{\node at (5.5,0) {\includegraphics[height=5cm]{sz_intensity_carlstrom.jpeg}};}
-		\uncover<3->{\node at (5.5,-0.3) {\includegraphics[height=4.5cm]{sz_temperature.jpeg}};}
+		\uncover<3-4>{\node at (5.5,-0.3) {\includegraphics[height=4.5cm]{sz_temperature.jpeg}};}
 		\node at (0,-3.2) {\footnotesize{Credit: Van Speybroeck}};
-		\uncover<2->{\node at (5.5,-3.1) {\footnotesize{Credit: Carlstrom}};};
+		\uncover<2-4>{\node at (5.5,-3.1) {\footnotesize{Credit: Carlstrom}};};
 		\uncover<4->{
 			\node at (2.8,-4.0) {
 				\includegraphics[height=1cm]{maps/sz1.png}
@@ -511,7 +511,40 @@
 			};
 			\node at (2.8,-4.6) {\footnotesize{Credit: Planck}};
 		}
-		\uncover<5->{
+		\uncover<5>{
+			\node[text width=5cm] at (5.5,0) {
+				\begin{itemize}
+					\item Distance independent: Detect massive clusters at any distance!
+					\item Given pressure profile model: Measure mass and physical size of cluster
+					\item Probe cluster mass distribution as function of redshift
+				\end{itemize}
+			};
+		}
+	\end{tikzpicture}
+\end{frame}
+\begin{frame}{ACT Measurements}
+	\includegraphics[width=\textwidth]{act_sz_clusters.eps} \\
+	\begin{tikzpicture}
+		\node[text width=5cm] at (0,0.5) {
+			\begin{itemize}
+				\item ACT detected 68 clusters
+				\item Cosmology limited by pressure profile
+				\item ACTPol analysis ongoing
+			\end{itemize}
+		};
+		\node at (5,0) {\includegraphics[width=4cm]{act_sz_cosmology.eps}};
+
+	\end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}{Kinematic SZ}
+	\begin{tikzpicture}
+		\node at (0,0) {\includegraphics[height=6cm]{sz_illustration_van_speybroeck.png}};
+		\node at (5.5,-0.3) {\includegraphics[height=4.5cm]{sz_temperature.jpeg}};
+		\node at (0,-3.2) {\footnotesize{Credit: Van Speybroeck}};
+		\node at (5.5,-3.1) {\footnotesize{Credit: Carlstrom}};
+		\uncover<2->{
 		\draw [thick,red,->] (-1.7,-0.0) -- +(0,-0.5);
 		\draw [thick,red,->] (-1.3,-0.35) -- +(0,-0.5);
 		\draw [thick,red,->] (-0.9,-0.45) -- +(0,-0.5);
@@ -519,7 +552,7 @@
 		\draw [thick,red,->] ( 0.5,-0.40) -- +(0,-0.5);
 		\draw [thick,red,->] ( 0.9,-0.30) -- +(0,-0.5);
 		\draw [thick,red,->] ( 1.3, 0.30) -- +(0,-0.5);}
-		\uncover<5->{
+		\uncover<3->{
 			\draw [thick,red] (3.94,1.089) -- +(0.25,0.0) -- +(0.50,0.01) -- +(0.75,0.022) -- +(1.00,0.035) -- +(1.5,0.067)-- +(2.0,0.090) -- +(2.5,0.098) -- +(3.88,0.110);
 		}
 	\end{tikzpicture}
@@ -550,9 +583,13 @@
 \begin{frame}
 	\centering
 	\hspace*{-1cm}\begin{tikzpicture}
-		\node at (0, 0) {\includegraphics[height=7cm]{advact_polspec_forecast.png}};
-		\node at (6, 2) {\includegraphics[width=4.3cm]{advact_cluster_forecast.pdf}};
-		\node at (6,-2) {\includegraphics[width=4cm]{advact_dsfg_forecast.pdf}};
+		\node at (0, 2) {\includegraphics[height=5.2cm]{advact_polspec_forecast.png}};
+		\node at (0.3,-2.1) {\includegraphics[height=3cm,width=5cm]{advact_lensing_forecast_blake.png}};
+		\node at (0.5, -1) {\small CMB lensing};
+		\node[red] at (0.3,-2.5) {$\sim220\sigma$};
+		\node at (0.3,-3.2) {\footnotesize{Credit: Blake Sherwin}};
+		\node at (5, 2) {\includegraphics[width=4.3cm]{advact_cluster_forecast.pdf}};
+		\node at (5,-2.05) {\includegraphics[width=4cm]{advact_dsfg_forecast.pdf}};
 	\end{tikzpicture}
 \end{frame}
 % 45 * End
