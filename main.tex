@@ -439,16 +439,49 @@
 	\end{tikzpicture}
 \end{frame}
 
+{
+% Why wouldn't pdflatex accept the original jpeg file?
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth]{act_atacama_hincks.png}}%
 \begin{frame}{The Atacama Cosmology Telescope}
-
-
+	\begin{tikzpicture}
+		\node[text width=5cm,anchor=north] at (0,0) {
+			\begin{itemize}
+				\item<2-> 6m telescope in Atacama desert in Chile
+				\item<3-> 4th highest permanent observatory in the world: 5190 m
+				\item<4-> Thin, dry air: Low PWV
+				\item<5-> Compared to South Pole: Higher PWV, better logistics, better sky coverage
+			\end{itemize}
+		};
+		\node[anchor=north] at (5.5,-0.4) {
+			\only<2>{\includegraphics[width=6cm]{act_closeup_hincks.png}}
+			\only<3>{\includegraphics[width=6cm]{highest_observatories.png}}
+			\only<4->{\includegraphics[width=6cm]{pwv_chajnantor_eso.jpeg}}
+		};
+		\node at ( 3,-7) {\colorbox{white}{\includegraphics[width=\textwidth]{actpol_banner.png}}};
+	\end{tikzpicture}
 \end{frame}
+}
 
-%    * ACT
-\begin{frame}{ACT site PWV}
+\begin{frame}{1.4' angular resolution}
 	\centering
-	\includegraphics[width=\textwidth]{pwv_chajnantor_eso.jpeg}
+	\begin{tabular}{c}
+		\only<1>{Planck}%
+		\only<2>{Planck+actpol}%
+		\only<3>{Planck+actpol $\ell>2000$}%
+		\only<4>{Planck $\ell>2000$}%
+		\\
+		\only<1>{\includegraphics[width=0.7\textwidth]{maps/crop/planck.png}}%
+		\only<2>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
+		\only<3>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd_2000_gray_0.png}}%
+		\only<4>{\includegraphics[width=0.7\textwidth]{maps/crop/planck_2000_gray.png}}%
+		\\
+		\only<1>{$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$}%
+		\only<2>{$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$}%
+		\only<3>{$\pm 200 \mu$K, $4.26^\circ \times 4.26^\circ$}%
+		\only<4>{$\pm 200 \mu$K, $4.26^\circ \times 4.26^\circ$}%
+	\end{tabular}
 \end{frame}
+
 % 22 * Example CMB image from 2014 ACTPol article - before and after bandpass
 %    * Planck comparison?
 %    * Resulting image is not pristine CMB due to noise and systematic effects.
@@ -891,26 +924,6 @@
 % === ACTPol status and plans ===
 % Analysing S2 of actpol data, preparing for S3 observing with new frequencies
 % Advanced actpol
-
-\begin{frame}
-	\centering
-	\begin{tabular}{c}
-		\only<1>{Planck}%
-		\only<2>{Planck+actpol}%
-		\only<3>{Planck+actpol $\ell>2000$}%
-		\only<4>{Planck $\ell>2000$}%
-		\\
-		\only<1>{\includegraphics[width=0.7\textwidth]{maps/crop/planck.png}}%
-		\only<2>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
-		\only<3>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd_2000_gray_0.png}}%
-		\only<4>{\includegraphics[width=0.7\textwidth]{maps/crop/planck_2000_gray.png}}%
-		\\
-		\only<1>{$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$}%
-		\only<2>{$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$}%
-		\only<3>{$\pm 200 \mu$K, $4.26^\circ \times 4.26^\circ$}%
-		\only<4>{$\pm 200 \mu$K, $4.26^\circ \times 4.26^\circ$}%
-	\end{tabular}
-\end{frame}
 
 
 \begin{frame}{Instrument noise properties}
