@@ -450,6 +450,7 @@
 				\item<3-> 4th highest permanent observatory in the world: 5190 m
 				\item<4-> Thin, dry air: Low PWV
 				\item<5-> Compared to South Pole: Higher PWV, better logistics, better sky coverage
+				\item<6-> First light 2007. Pol. upgrade in 2013
 			\end{itemize}
 		};
 		\node[anchor=north] at (5.5,-0.4) {
@@ -467,19 +468,41 @@
 	\begin{tabular}{c}
 		\only<1>{Planck}%
 		\only<2>{Planck+actpol}%
-		\only<3>{Planck+actpol $\ell>2000$}%
-		\only<4>{Planck $\ell>2000$}%
+		%\only<3>{Planck+actpol $\ell>2000$}%
+		%\only<4>{Planck $\ell>2000$}%
 		\\
 		\only<1>{\includegraphics[width=0.7\textwidth]{maps/crop/planck.png}}%
 		\only<2>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
-		\only<3>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd_2000_gray_0.png}}%
-		\only<4>{\includegraphics[width=0.7\textwidth]{maps/crop/planck_2000_gray.png}}%
+		%\only<3>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd_2000_gray_0.png}}%
+		%\only<4>{\includegraphics[width=0.7\textwidth]{maps/crop/planck_2000_gray.png}}%
 		\\
 		\only<1>{$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$}%
 		\only<2>{$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$}%
-		\only<3>{$\pm 200 \mu$K, $4.26^\circ \times 4.26^\circ$}%
-		\only<4>{$\pm 200 \mu$K, $4.26^\circ \times 4.26^\circ$}%
+		%\only<3>{$\pm 200 \mu$K, $4.26^\circ \times 4.26^\circ$}%
+		%\only<4>{$\pm 200 \mu$K, $4.26^\circ \times 4.26^\circ$}%
 	\end{tabular}
+\end{frame}
+
+\begin{frame}{Not just CMB!}
+	\vspace*{-0.5cm}
+	\begin{tikzpicture}
+		\node at ( 0, 0) {\includegraphics[width=4cm]{maps/crop/coadd.png}};
+		\uncover<2->{%
+		\node at ( 6.5, 2.1) {\includegraphics[width=4cm]{maps/crop/cmb.png}};
+		\draw[thick,red, ->] (2,0) to[out=0,in=180] (4.5, 2.1);
+		\node at ( 6.5, 4.3) {\footnotesize{Lensed CMB}};}
+		\uncover<3->{%
+		\node at ( 6.5,-2.1) {\includegraphics[width=4cm]{maps/crop/nocmb.png}};
+		\draw[thick,blue,->] (2,0) to[out=0,in=180] (4.5,-2.1);
+		\node at ( 6.5,-4.3) {\footnotesize{Rest}};
+		}
+		\uncover<4->{%
+		\draw ( 4.92, -0.29) circle (1.5mm);
+		\draw ( 4.94, -1.23) circle (1.5mm);
+		\node[anchor=west] at (5.1, -0.3) {\footnotesize{SZ cluster}};
+		\node[anchor=west] at (5.1, -1.24) {\footnotesize{Dusty galaxy}};
+		}
+	\end{tikzpicture}
 \end{frame}
 
 % 22 * Example CMB image from 2014 ACTPol article - before and after bandpass
@@ -489,22 +512,6 @@
 %    * But that's fine!
 %      Systematic effects as S/N increases: ignorable -> nuisance -> problem -> signal
 %    * Split image into CMB + rest, highlight ACT goals
-\begin{frame}
-	\centering
-	\begin{tabular}{c}
-		\only<1>{Total signal}%
-		\only<2>{CMB (Wiener)}%
-		\only<3>{Remainder}%
-		\only<4>{Total signal}%
-		\\
-		\only<1>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
-		\only<2>{\includegraphics[width=0.7\textwidth]{maps/crop/cmb.png}}%
-		\only<3>{\includegraphics[width=0.7\textwidth]{maps/crop/nocmb.png}}%
-		\only<4>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
-		\\
-		$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$
-	\end{tabular}
-\end{frame}
 %% 25 * ACT goals: CMB lensing (w B-modes), High-l CMB, SZ, (low-l B-modes), (ptsrcs)
 %%    * Lensing
 %%      - Illustration of effect
@@ -935,7 +942,22 @@
 	\includegraphics[width=0.7\textwidth]{maps/cmb_sim.png}
 \end{frame}
 
-
+\begin{frame}
+	\centering
+	\begin{tabular}{c}
+		\only<1>{Total signal}%
+		\only<2>{CMB (Wiener)}%
+		\only<3>{Remainder}%
+		\only<4>{Total signal}%
+		\\
+		\only<1>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
+		\only<2>{\includegraphics[width=0.7\textwidth]{maps/crop/cmb.png}}%
+		\only<3>{\includegraphics[width=0.7\textwidth]{maps/crop/nocmb.png}}%
+		\only<4>{\includegraphics[width=0.7\textwidth]{maps/crop/coadd.png}}%
+		\\
+		$\pm 250 \mu$K, $4.26^\circ \times 4.26^\circ$
+	\end{tabular}
+\end{frame}
 
 
 
