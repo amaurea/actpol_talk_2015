@@ -439,29 +439,38 @@
 	\end{tikzpicture}
 \end{frame}
 
-{
 % Why wouldn't pdflatex accept the original jpeg file?
 %\usebackgroundtemplate{\includegraphics[width=\paperwidth]{act_atacama_hincks.png}}%
 \begin{frame}{The Atacama Cosmology Telescope}
-	\begin{tikzpicture}
-		\node[text width=5cm,anchor=north] at (0,0) {
-			\begin{itemize}
-				\item<2-> 6m telescope in Atacama desert in Chile
-				\item<3-> 4th highest permanent observatory in the world: 5190 m
-				\item<4-> Thin, dry air: Low PWV
-				\item<5-> Compared to South Pole: Higher PWV, better logistics, better sky coverage
-				\item<6-> First light 2007. Pol. upgrade in 2013
-			\end{itemize}
-		};
-		\node[anchor=north] at (5.5,-0.4) {
-			\only<2>{\includegraphics[width=6cm]{act_closeup_hincks.png}}
-			\only<3>{\includegraphics[width=6cm]{highest_observatories.png}}
-			\only<4->{\includegraphics[width=6cm]{pwv_chajnantor_eso.jpeg}}
-		};
-		\node at ( 3,-7) {\colorbox{white}{\includegraphics[width=\textwidth]{actpol_banner.png}}};
-	\end{tikzpicture}
+	\centering
+	\includegraphics[width=\textwidth]{act_atacama_hincks.png}
 \end{frame}
-}
+\begin{frame}{Wikipedia}
+	\centering
+	\includegraphics[width=\textwidth]{highest_observatories.png}
+\end{frame}
+\begin{frame}{Low PWV}
+	\centering
+	\includegraphics[width=\textwidth]{pwv_chajnantor_eso.jpeg}
+\end{frame}
+\begin{frame}{6 m primary mirror}
+	\centering
+	\includegraphics[width=\textwidth]{act_closeup_hincks.png}
+\end{frame}
+\begin{frame}{2007-2011: MBAC, 3x1000 T-only detectors}
+	\centering
+	\includegraphics[width=\textwidth]{act_freqs.pdf}\\
+	\footnotesize{Adapted from Planck}
+\end{frame}
+\begin{frame}{2013-2016: ACTPol: 3x1000 T+P detectors}
+	\centering
+	\includegraphics[width=\textwidth]{actpol_freqs.pdf}\\
+	\footnotesize{Adapted from Planck}
+\end{frame}
+\begin{frame}{2013: 4 patches of 70 deg${}^2$, 1 array, 150 GHz}
+	\centering
+	\hspace*{-1cm}\includegraphics[width=1.15\textwidth]{actpol_2013_patches.pdf}
+\end{frame}
 
 \begin{frame}{1.4' angular resolution}
 	\centering
