@@ -32,7 +32,7 @@
 	\titlepage
 	\vspace{-1cm}
 	\begin{center}
-	{\footnotesize The source code for this talk can be found at {\color[rgb]{0,0.7,0}https://github.com/amaurea/actpol-talk-2015}}
+	{\footnotesize The source code for this talk can be found at {\color[rgb]{0,0.7,0}https://github.com/amaurea/actpol\_talk\_2015}}
 	\end{center}
 \end{frame}
 %    * Short CMB intro. Big bang, surface of last scattering, picture of early universe
@@ -145,6 +145,7 @@
 	{\footnotesize $-1\mu$K\enskip\includegraphics[width=12mm,height=2mm]{colorbar.png}\enskip$1\mu$K}
 \end{tabular}\hspace*{-5mm}
 \end{frame}
+
 %    * What telescope measures etc.
 \begin{frame}{What the telescope actually observes}
 	\begin{tikzpicture}[bad/.style={line width=3pt,red}]
@@ -508,6 +509,16 @@
 	\end{tabular}
 \end{frame}
 
+\begin{frame}{What about all those potential contaminants?}
+	\centering
+	\includegraphics[width=\textwidth]{actpol_2014_TQUEB.pdf} \\
+	\begin{tabular}{ccc}
+		\includegraphics[width=0.3\textwidth]{contaminants/12_glitch_teb_0.png} &
+		\includegraphics[width=0.3\textwidth]{contaminants/12_glitch_teb_1.png} &
+		\includegraphics[width=0.3\textwidth]{contaminants/12_glitch_teb_2.png}
+	\end{tabular}
+\end{frame}
+
 \begin{frame}{1.4' angular resolution}
 	\centering
 	\begin{tabular}{c}
@@ -528,10 +539,34 @@
 	\end{tabular}
 \end{frame}
 
-\begin{frame}{ACT angular power spectra}
+\begin{frame}{ACTPol angular power spectra}
 	\centering
 	\includegraphics[width=\textwidth]{tteepaper.pdf}
 \end{frame}
+
+\begin{frame}{No first-season B-mode detection}
+	\centering
+	\includegraphics[width=\textwidth]{actpol_bb_lin.pdf}
+\end{frame}
+
+\begin{frame}{Power spectrum status then}
+	\centering
+	\includegraphics[width=\textwidth]{spectra_before.pdf}
+\end{frame}
+
+\begin{frame}{Power spectrum status now}
+	\centering
+	\includegraphics[width=\textwidth]{spectra_after.pdf}
+\end{frame}
+
+\begin{frame}{(Not) constraining LCDM with ACTPol first-season E-modes}
+	\centering
+	\includegraphics[width=7cm]{actpol_parameters_from_pol.pdf}
+	\begin{itemize}
+		\item<2> Errors still too large to improve on T-mode measurements
+	\end{itemize}
+\end{frame}
+
 %      - What it helps with
 %      - ACT results
 %      - With others
@@ -589,13 +624,13 @@
 			\node at ( 0.00,0.00) {\includegraphics[width=10cm]{z_cmb.pdf}};
 			\node[orange] at (4.15,2.40) {CMB};
 			\node at (-5.20,0.20) {\includegraphics[height=1.0cm]{earth.png}};
-			\uncover<14->{%
+			\uncover<15->{%
 			\node at ( 0.00,0.00) {\includegraphics[width=10cm]{z_sn.pdf}};
 			\node[blue] at (-2.40,2.40) {SN};}
-			\uncover<15->{%
+			\uncover<16->{%
 			\node at ( 0.00,0.00) {\includegraphics[width=10cm]{z_bao.pdf}};
 			\node[green] at (-0.32,2.40) {BAO};}
-			\uncover<18->{%
+			\uncover<19->{%
 			\node at ( 0.00,0.00) {\includegraphics[width=10cm]{z_lens.pdf}};
 			\node[magenta,align=center] at (-0.24,0.00) {CMB\\Lensing};}
 
@@ -620,7 +655,10 @@
 			\uncover<12>{\node[fill=white,align=center] at (0,-1.5) {
 				\includegraphics[height=7.5cm]{cmb_nolens_degen.png}\\
 				{\footnotesize Modified from Sherwin et al. 2011 \uncover<0>{g}}};}
-			\uncover<16>{\node[fill=white,align=center] at (0,-1.5) {
+			\uncover<13>{\node[fill=white,align=center] at (0,-1.5) {
+				\includegraphics[height=4cm]{geometric_degeneracy_blake.png}\\
+				{\footnotesize Modified from Sherwin et al. 2011 \uncover<0>{g}}};}
+			\uncover<17>{\node[fill=white,align=center] at (0,-1.5) {
 				\includegraphics[height=7.5cm]{cmb_nolens_sn_bao.png}\\
 				{\footnotesize Modified from Supernova Cosmology Project 2010}};}
 
@@ -754,11 +792,12 @@
 	\centering
 	\begin{itemize}
 		\item<1-> ACT 2011: First detection of lensing power spectrum
-		\item<2-> Planck 2015: $40\sigma$!
+		\item<3-> Planck 2015: $40\sigma$!
 	\end{itemize}
 	\begin{tikzpicture}
 		\uncover<1>{\node at (0,0) {\includegraphics[height=6cm]{act_lens_spec11.pdf}};}
-		\uncover<2>{\node at (0,0) {\includegraphics[height=6cm]{planck_spt_act_lensing.pdf}};}
+		\uncover<2>{\node at (0,0) {\includegraphics[height=6cm]{cmbonly_lambda.png}};}
+		\uncover<3>{\node at (0,0) {\includegraphics[height=6cm]{planck_spt_act_lensing.pdf}};}
 	\end{tikzpicture}
 \end{frame}
 
